@@ -1,4 +1,4 @@
----
+
 
 # 📄 Documentación de `api_server.js`
 
@@ -7,7 +7,7 @@ Este archivo implementa un servidor en Node.js que actúa como una **API REST** 
 1. Generar una **frase mnemónica** (seed) usando el estándar BIP39.
 2. Derivar una **cartera de Bitcoin Cash (BCH)** con claves y direcciones a partir de esa frase.
 
----
+
 
 ## 📦 Dependencias
 
@@ -27,7 +27,7 @@ const ecc = require('tiny-secp256k1');       // Criptografía ECC (secp256k1)
 const ECPair = ECPairFactory(ecc);           // Par de claves ECC
 ```
 
----
+
 
 ## 🔧 Función: `generateBCHWallet(mnemonicPhrase, index = 0)`
 
@@ -61,7 +61,6 @@ Esta función recibe:
 }
 ```
 
----
 
 ## 🌐 Endpoints de la API
 
@@ -83,7 +82,7 @@ Esta función recibe:
 * 400: Falta la frase mnemónica.
 * 500: La frase no es válida o ocurrió un error.
 
----
+
 
 ### `GET /generate-mnemonic`
 
@@ -110,14 +109,13 @@ app.listen(port, () => {
 
 El servidor se ejecuta en el **puerto 3000** (puede ser remapeado por tu panel como Plesk, cPanel, etc.).
 
----
+
 
 
 
 index.php:
 
 
----
 
 ## ✅ ¿Qué hace este archivo?
 
@@ -125,7 +123,7 @@ index.php:
 * Permite **enviar esa frase + un índice** al servidor PHP.
 * El PHP envía esos datos al servidor Node.js, que devuelve claves y direcciones BCH derivadas.
 
----
+
 
 ## 🔍 Secciones clave del archivo:
 
@@ -147,7 +145,7 @@ index.php:
 * Si haces clic en **"Generar Frase Aleatoria"**, se ejecuta JS (`generateRandomMnemonic`).
 * Si haces clic en **"Generar Wallets BCH"**, se envía el formulario al servidor PHP para procesar.
 
----
+
 
 ### 2. JavaScript (cliente)
 
@@ -227,7 +225,7 @@ if ($result === FALSE) {
 
 * Si el servidor no responde o devuelve error, muestra advertencias.
 
----
+
 
 ## ✅ Qué debes tener funcionando
 
@@ -238,4 +236,4 @@ if ($result === FALSE) {
    * `POST /generate-bch-wallet`
 3. Este archivo PHP puede estar en un servidor local (ej. `localhost:8000`) o Apache.
 
----
+
